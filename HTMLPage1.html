@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Corporativo</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        .login-box { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        input { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background: #007bff; color: #fff; border: none; padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Acesso Corporativo</h2>
+    <div class="login-box">
+        <form id="phishingForm">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("phishingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            // Simula envio dos dados (em um ambiente real, isso nunca deveria acontecer sem consentimento!)
+            console.log("Usuário: " + username + " | Senha: " + password);
+
+            // Redireciona para uma página de conscientização
+            alert("Teste de segurança! Você foi vítima de uma simulação de phishing.");
+            window.location.href = "https://www.exemplo.com/alerta-de-phishing"; // Link da página educacional da empresa
+        });
+    </script>
+</body>
+</html>
